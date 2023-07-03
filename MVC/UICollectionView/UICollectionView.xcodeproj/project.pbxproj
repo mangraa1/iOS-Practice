@@ -13,6 +13,9 @@
 		04B4C73D2A52D90D00C4F240 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B4C73B2A52D90D00C4F240 /* Main.storyboard */; };
 		04B4C73F2A52D91000C4F240 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B4C73E2A52D91000C4F240 /* Assets.xcassets */; };
 		04B4C7422A52D91000C4F240 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B4C7402A52D91000C4F240 /* LaunchScreen.storyboard */; };
+		04B4C74A2A53016100C4F240 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B4C7492A53016100C4F240 /* MenuCollectionViewCell.swift */; };
+		04B4C74F2A53021300C4F240 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B4C74E2A53021300C4F240 /* Model.swift */; };
+		04D1B65B2A532A3D006D6FA6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D1B65A2A532A3D006D6FA6 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		04B4C73E2A52D91000C4F240 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04B4C7412A52D91000C4F240 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04B4C7432A52D91000C4F240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04B4C7492A53016100C4F240 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		04B4C74E2A53021300C4F240 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		04D1B65A2A532A3D006D6FA6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,42 @@
 		04B4C7342A52D90D00C4F240 /* UICollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				04B4C74C2A5301C700C4F240 /* Model */,
+				04B4C74B2A53017B00C4F240 /* View */,
+				04B4C73B2A52D90D00C4F240 /* Main.storyboard */,
+				04B4C74D2A5301D500C4F240 /* Controller */,
 				04B4C7352A52D90D00C4F240 /* AppDelegate.swift */,
 				04B4C7372A52D90D00C4F240 /* SceneDelegate.swift */,
-				04B4C7392A52D90D00C4F240 /* ViewController.swift */,
-				04B4C73B2A52D90D00C4F240 /* Main.storyboard */,
 				04B4C73E2A52D91000C4F240 /* Assets.xcassets */,
 				04B4C7402A52D91000C4F240 /* LaunchScreen.storyboard */,
 				04B4C7432A52D91000C4F240 /* Info.plist */,
 			);
 			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		04B4C74B2A53017B00C4F240 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04B4C7492A53016100C4F240 /* MenuCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04B4C74C2A5301C700C4F240 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04B4C74E2A53021300C4F240 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04B4C74D2A5301D500C4F240 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04B4C7392A52D90D00C4F240 /* ViewController.swift */,
+				04D1B65A2A532A3D006D6FA6 /* DetailViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B4C74F2A53021300C4F240 /* Model.swift in Sources */,
 				04B4C73A2A52D90D00C4F240 /* ViewController.swift in Sources */,
 				04B4C7362A52D90D00C4F240 /* AppDelegate.swift in Sources */,
+				04D1B65B2A532A3D006D6FA6 /* DetailViewController.swift in Sources */,
 				04B4C7382A52D90D00C4F240 /* SceneDelegate.swift in Sources */,
+				04B4C74A2A53016100C4F240 /* MenuCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
