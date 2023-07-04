@@ -21,7 +21,7 @@
                                 <rect key="frame" x="16" y="103" width="361" height="715"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="U8c-rZ-3nU">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CcI-ko-WB9">
                                     <size key="itemSize" width="172" height="217"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -35,10 +35,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="172" height="217"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4b1-U7-HD3">
+                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4b1-U7-HD3">
                                                     <rect key="frame" x="8" y="0.0" width="156" height="186"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Is6-Fe-RHl">
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Is6-Fe-RHl">
                                                     <rect key="frame" x="8" y="186" width="156" height="30"/>
                                                     <color key="backgroundColor" systemColor="systemRedColor"/>
                                                     <constraints>
@@ -55,8 +55,8 @@
                                                 <constraint firstItem="4b1-U7-HD3" firstAttribute="top" secondItem="EYE-8x-8su" secondAttribute="top" id="EDM-Lm-4dS"/>
                                                 <constraint firstItem="Is6-Fe-RHl" firstAttribute="leading" secondItem="EYE-8x-8su" secondAttribute="leading" constant="8" id="LMs-xA-KcX"/>
                                                 <constraint firstItem="4b1-U7-HD3" firstAttribute="leading" secondItem="EYE-8x-8su" secondAttribute="leading" constant="8" id="cv5-wM-jsz"/>
-                                                <constraint firstAttribute="bottom" secondItem="Is6-Fe-RHl" secondAttribute="bottom" constant="1" id="hbW-gJ-xXu"/>
                                                 <constraint firstAttribute="trailing" secondItem="Is6-Fe-RHl" secondAttribute="trailing" constant="8" id="sbW-z7-siE"/>
+                                                <constraint firstAttribute="bottom" secondItem="Is6-Fe-RHl" secondAttribute="bottom" constant="1" id="tf5-Ni-zso"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="172" height="217"/>
@@ -73,7 +73,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Menu" id="trH-vK-E0O"/>
                     <connections>
-                        <outlet property="collectionView" destination="zhu-8e-oTm" id="zBC-wm-pLs"/>
+                        <outlet property="collectionView" destination="zhu-8e-oTm" id="aDX-tm-Npl"/>
                         <segue destination="2T7-aQ-R6F" kind="show" identifier="showVC" id="VbA-YN-Pcd"/>
                     </connections>
                 </viewController>

@@ -30,8 +30,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.dataSource = self
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -64,6 +64,4 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         let menu = itemMenuArray[indexPath.row]
         performSegue(withIdentifier: "showVC", sender: menu)
     }
-
 }
-
