@@ -8,30 +8,69 @@
 import UIKit
 import SnapKit
 
+enum Gender: String {
+    case male
+    case female
+}
+
+class UserModel: NSObject, NSCoding {
+
+    let name: String
+    let surname: String
+    let city: String
+    let gender: Gender
+
+    init(name: String, surname: String, city: String, gender: Gender) {
+        self.name = name
+        self.surname = surname
+        self.city = city
+        self.gender = gender
+    }
+
+    func encode(with coder: NSCoder) {
+        coder.encode(name, forKey: "name")
+        coder.encode(surname, forKey: "surname")
+        coder.encode(city, forKey: "city")
+        coder.encode(gender.rawValue, forKey: "gender")
+    }
+
+    required init?(coder: NSCoder) {
+        name = coder.decodeObject(forKey: "name") as? String ?? ""
+        surname = coder.decodeObject(forKey: "surname") as? String ?? ""
+        city = coder.decodeObject(forKey: "city") as? String ?? ""
+        gender = Gender(rawValue: coder.decodeObject(forKey: "gender") as! String) ?? Gender.male
+    }
+}
+
 class ViewController: UIViewController {
 
     //MARK: - Variables
     private var saveButton = UIBarButtonItem()
 
     private var registrationLabel = UILabel()
-    private var firstNameLabel = UILabel()
-    private var secondNameLabel = UILabel()
+    private var name = UILabel()
+    private var surname = UILabel()
     private var cityNameLabel = UILabel()
-    private var cityPickerView = UIPickerView()
     private var genderLabel = UILabel()
 
-    private var firstNameTextField = UITextField()
-    private var secondNameTextField = UITextField()
+    private var nameTextField = UITextField()
+    private var surnameTextField = UITextField()
 
     private var segmentedControll: UISegmentedControl!
 
+    private var cityPickerView = UIPickerView()
     private let cities = ["London", "Kyiv", "Vien", "Bratislava"]
+
+    var pickedCity: String?
+    var pickedGender: Gender?
 
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupInterface()
+//        nameTextField.text = UserSettings.userName
+        nameTextField.text = UserSettings.userModel.name
     }
 
     //MARK: - UI
@@ -45,21 +84,21 @@ class ViewController: UIViewController {
         registrationLabel.font = UIFont.boldSystemFont(ofSize: 30)
 
         //firstNameLabel
-        createLabel(firstNameLabel, withText: "First name", topConstraint: registrationLabel.snp.bottom)
+        createLabel(name, withText: "First name", topConstraint: registrationLabel.snp.bottom)
 
         //firstNameTextField
-        createTextField(firstNameTextField, topConstraint: firstNameLabel.snp.bottom)
-        firstNameTextField.delegate = self
+        createTextField(nameTextField, topConstraint: name.snp.bottom)
+        nameTextField.delegate = self
 
         //secondNameLabel
-        createLabel(secondNameLabel, withText: "Second name", topConstraint: firstNameTextField.snp.bottom)
+        createLabel(surname, withText: "Second name", topConstraint: nameTextField.snp.bottom)
 
         //secondNametextField
-        createTextField(secondNameTextField, topConstraint: secondNameLabel.snp.bottom)
-        secondNameTextField.delegate = self
+        createTextField(surnameTextField, topConstraint: surname.snp.bottom)
+        surnameTextField.delegate = self
 
         //cityNameLabel
-        createLabel(cityNameLabel, withText: "City", topConstraint: secondNameTextField.snp.bottom)
+        createLabel(cityNameLabel, withText: "City", topConstraint: surnameTextField.snp.bottom)
 
         //cityPickerView
         view.addSubview(cityPickerView)
@@ -119,9 +158,36 @@ class ViewController: UIViewController {
         }
     }
 
-    //MARK: - #selector
+    //MARK: - #selector(saveAction)
     @objc func saveAction() {
+        var nameTrimmedText: String?
+        var surnameTrimmedText: String?
 
+        switch segmentedControll.selectedSegmentIndex {
+        case 0:
+            pickedGender = .male
+        case 1:
+            pickedGender = .female
+        default:
+            break
+        }
+
+        if let text = nameTextField.text {
+            nameTrimmedText = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        }
+
+        if let text = surnameTextField.text {
+            surnameTrimmedText = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        }
+
+        guard let myPickedCity = pickedCity, let myPickedGender = pickedGender else { return }
+        let userObject = UserModel(name: nameTrimmedText ?? "", surname: surnameTrimmedText ?? "", city: myPickedCity, gender: myPickedGender)
+        print(userObject)
+
+        UserSettings.userName = nameTrimmedText
+        print(UserSettings.userName ?? "")
+        UserSettings.userModel = userObject
+        print(UserSettings.userModel ?? "")
     }
 }
 
@@ -138,16 +204,17 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let city = cities[row]
+        pickedCity = city
         return city
     }
 }
 
 extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == firstNameTextField {
-            secondNameTextField.becomeFirstResponder()
-        } else if textField == secondNameTextField {
-            secondNameTextField.resignFirstResponder()
+        if textField == nameTextField {
+            surnameTextField.becomeFirstResponder()
+        } else if textField == surnameTextField {
+            surnameTextField.resignFirstResponder()
         }
         return true
     }
