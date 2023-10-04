@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		047D08CC2ACDCFAF008F36CE /* ImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D08CB2ACDCFAF008F36CE /* ImageTransformer.swift */; };
+		047D08D12ACDD1F5008F36CE /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D08CD2ACDD1F5008F36CE /* User+CoreDataClass.swift */; };
+		047D08D22ACDD1F5008F36CE /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D08CE2ACDD1F5008F36CE /* User+CoreDataProperties.swift */; };
 		04E72EC42ACB3635003B9BC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E72EC32ACB3635003B9BC4 /* AppDelegate.swift */; };
 		04E72EC62ACB3635003B9BC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E72EC52ACB3635003B9BC4 /* SceneDelegate.swift */; };
 		04E72ECB2ACB3635003B9BC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E72EC92ACB3635003B9BC4 /* Main.storyboard */; };
@@ -15,13 +18,15 @@
 		04E72ED32ACB3637003B9BC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E72ED12ACB3637003B9BC4 /* LaunchScreen.storyboard */; };
 		04E72EDE2ACB3837003B9BC4 /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E72EDA2ACB3837003B9BC4 /* Book+CoreDataClass.swift */; };
 		04E72EDF2ACB3837003B9BC4 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E72EDB2ACB3837003B9BC4 /* Book+CoreDataProperties.swift */; };
-		04E72EE02ACB3837003B9BC4 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E72EDC2ACB3837003B9BC4 /* User+CoreDataClass.swift */; };
-		04E72EE12ACB3837003B9BC4 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E72EDD2ACB3837003B9BC4 /* User+CoreDataProperties.swift */; };
 		04E72EE42ACB3889003B9BC4 /* DataStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E72EE32ACB3889003B9BC4 /* DataStoreManager.swift */; };
 		04E72EE62ACB395E003B9BC4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E72EE52ACB395E003B9BC4 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		047D08CA2ACDCECE008F36CE /* CoreData_practice2_v3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData_practice2_v3.xcdatamodel; sourceTree = "<group>"; };
+		047D08CB2ACDCFAF008F36CE /* ImageTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTransformer.swift; sourceTree = "<group>"; };
+		047D08CD2ACDD1F5008F36CE /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "CoreData-practice2/Model/User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		047D08CE2ACDD1F5008F36CE /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "CoreData-practice2/Model/User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		04E72EC02ACB3635003B9BC4 /* CoreData-practice2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreData-practice2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E72EC32ACB3635003B9BC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04E72EC52ACB3635003B9BC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,8 +37,6 @@
 		04E72ED42ACB3637003B9BC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04E72EDA2ACB3837003B9BC4 /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = "<group>"; };
 		04E72EDB2ACB3837003B9BC4 /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		04E72EDC2ACB3837003B9BC4 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		04E72EDD2ACB3837003B9BC4 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		04E72EE32ACB3889003B9BC4 /* DataStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreManager.swift; sourceTree = "<group>"; };
 		04E72EE52ACB395E003B9BC4 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +74,7 @@
 				04E72EE22ACB3850003B9BC4 /* Model */,
 				04E72EE32ACB3889003B9BC4 /* DataStoreManager.swift */,
 				04E72EE52ACB395E003B9BC4 /* TableViewController.swift */,
+				047D08CB2ACDCFAF008F36CE /* ImageTransformer.swift */,
 				04E72EC32ACB3635003B9BC4 /* AppDelegate.swift */,
 				04E72EC52ACB3635003B9BC4 /* SceneDelegate.swift */,
 				04E72EC92ACB3635003B9BC4 /* Main.storyboard */,
@@ -85,10 +89,10 @@
 		04E72EE22ACB3850003B9BC4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				047D08CD2ACDD1F5008F36CE /* User+CoreDataClass.swift */,
+				047D08CE2ACDD1F5008F36CE /* User+CoreDataProperties.swift */,
 				04E72EDB2ACB3837003B9BC4 /* Book+CoreDataProperties.swift */,
 				04E72EDA2ACB3837003B9BC4 /* Book+CoreDataClass.swift */,
-				04E72EDD2ACB3837003B9BC4 /* User+CoreDataProperties.swift */,
-				04E72EDC2ACB3837003B9BC4 /* User+CoreDataClass.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,12 +169,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				04E72EDE2ACB3837003B9BC4 /* Book+CoreDataClass.swift in Sources */,
-				04E72EE12ACB3837003B9BC4 /* User+CoreDataProperties.swift in Sources */,
+				047D08CC2ACDCFAF008F36CE /* ImageTransformer.swift in Sources */,
+				047D08D22ACDD1F5008F36CE /* User+CoreDataProperties.swift in Sources */,
 				04E72EDF2ACB3837003B9BC4 /* Book+CoreDataProperties.swift in Sources */,
 				04E72EC42ACB3635003B9BC4 /* AppDelegate.swift in Sources */,
 				04E72ECE2ACB3635003B9BC4 /* CoreData_practice2.xcdatamodeld in Sources */,
 				04E72EC62ACB3635003B9BC4 /* SceneDelegate.swift in Sources */,
-				04E72EE02ACB3837003B9BC4 /* User+CoreDataClass.swift in Sources */,
+				047D08D12ACDD1F5008F36CE /* User+CoreDataClass.swift in Sources */,
 				04E72EE62ACB395E003B9BC4 /* TableViewController.swift in Sources */,
 				04E72EE42ACB3889003B9BC4 /* DataStoreManager.swift in Sources */,
 			);
@@ -393,9 +398,10 @@
 		04E72ECC2ACB3635003B9BC4 /* CoreData_practice2.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				047D08CA2ACDCECE008F36CE /* CoreData_practice2_v3.xcdatamodel */,
 				04E72ECD2ACB3635003B9BC4 /* CoreData_practice2.xcdatamodel */,
 			);
-			currentVersion = 04E72ECD2ACB3635003B9BC4 /* CoreData_practice2.xcdatamodel */;
+			currentVersion = 047D08CA2ACDCECE008F36CE /* CoreData_practice2_v3.xcdatamodel */;
 			path = CoreData_practice2.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

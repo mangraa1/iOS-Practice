@@ -2,12 +2,13 @@
 //  User+CoreDataProperties.swift
 //  CoreData-practice2
 //
-//  Created by mac on 02.10.2023.
+//  Created by mac on 04.10.2023.
 //
 //
 
 import Foundation
 import CoreData
+import UIKit
 
 
 extension User {
@@ -17,6 +18,7 @@ extension User {
     }
 
     @NSManaged public var name: String?
+    @NSManaged public var avatar: UIImage?
     @NSManaged public var book: Book?
 
 }

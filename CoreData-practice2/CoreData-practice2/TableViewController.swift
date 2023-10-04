@@ -18,13 +18,16 @@ class TableViewController: UITableViewController {
 
         let fetchRequest = User.fetchRequest()
         fetchRequest.fetchLimit = 15
+        fetchRequest.fetchOffset = 8
 
-        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: #keyPath(User.name), ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
 
         fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataStoreManager.viewContext, sectionNameKeyPath: nil, cacheName: nil)
 
         try! fetchResultController.performFetch()
+
+        fetchResultController.delegate = self
     }
 
     //MARK: - @IBAction
@@ -37,6 +40,7 @@ class TableViewController: UITableViewController {
         let user = User(context: dataStoreManager.viewContext)
         user.name = "User \(Int.random(in: 0 ..< 100))"
         user.book = book
+        user.avatar = UIImage(systemName: "person.fill")
 
         dataStoreManager.saveContext()
         tableView.reloadData()
@@ -54,9 +58,6 @@ class TableViewController: UITableViewController {
         return sectionInfo?.numberOfObjects ?? 0
     }
 
-
-    //MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
@@ -64,7 +65,45 @@ class TableViewController: UITableViewController {
 
         cell.textLabel?.text = user.name
         cell.detailTextLabel?.text = user.book?.name
+        cell.imageView?.image = user.avatar
 
         return cell
+    }
+
+    //MARK: - Table view delegate
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let user = fetchResultController.object(at: indexPath)
+
+            dataStoreManager.viewContext.delete(user)
+
+            dataStoreManager.saveContext()
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+}
+
+//MARK: - NSFetchedResultsControllerDelegate
+extension TableViewController: NSFetchedResultsControllerDelegate {
+
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+
+        if let indexPath = indexPath {
+            switch type {
+            case .insert, .delete:
+                tableView.performBatchUpdates {
+                    if type == .insert {
+                        tableView.insertRows(at: [indexPath], with: .fade)
+                    } else {
+                        tableView.deleteRows(at: [indexPath], with: .fade)
+                    }
+                }
+            default: break
+            }
+        }
     }
 }
