@@ -10,26 +10,52 @@ import UIKit
 class MainViewController: UIViewController {
 
     //MARK: - @IBOutlet
-    @IBOutlet weak var greetingLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
 
     //MARK: - External vars
-    var presenter: MainViewPresenterProtocol!
+    public var presenter: MainViewPresenterProtocol!
 
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    }
-
-    //MARK: - @IBAction
-    @IBAction func didTapButtonAction(_ sender: UIButton) {
-        presenter.showGreeting()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
 }
 
+//MARK: - UITableViewDataSource
+extension MainViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.comments?.count ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let comment = presenter.comments?[indexPath.row]
+
+        cell.textLabel?.text = comment?.body
+        return cell
+    }
+}
+
+//MARK: - UITableViewDelegate
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let comment = presenter.comments?[indexPath.row]
+        let detailVC = ModuleBuilder.createDetailModule(comment: comment)
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+}
+
+//MARK: - MainViewProtocol
 extension MainViewController: MainViewProtocol {
-    func setGreeting(greeting: String) {
-        greetingLabel.text = greeting
+    func success() {
+        tableView.reloadData()
+    }
+
+    func failure(error: Error) {
+        print(error.localizedDescription)
     }
 }
 
