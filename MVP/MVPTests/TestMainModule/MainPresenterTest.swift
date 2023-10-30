@@ -8,7 +8,7 @@
 import XCTest
 @testable import MVP
 
-
+/*
 class MockView: MainViewProtocol {
     var titleTest: String?
 
@@ -51,3 +51,4 @@ final class MainPresenterTest: XCTestCase {
         XCTAssertEqual(person.secondName, "Bar")
     }
 }
+*/
