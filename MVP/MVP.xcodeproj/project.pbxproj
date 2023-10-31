@@ -21,6 +21,7 @@
 		043B39952AEC41CB00C80047 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043B39942AEC41CB00C80047 /* MainViewController.xib */; };
 		043B39972AEC438B00C80047 /* AsselserModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B39962AEC438B00C80047 /* AsselserModuleBuilder.swift */; };
 		04642EA32AED1870001244FB /* MainPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04642EA22AED1870001244FB /* MainPresenterTest.swift */; };
+		048013452AF1953D00064093 /* RouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048013442AF1953D00064093 /* RouterTest.swift */; };
 		04D1E1732AED612A00A62CE1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D1E1722AED612A00A62CE1 /* NetworkService.swift */; };
 		04D1E1772AED7DA900A62CE1 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D1E1762AED7DA900A62CE1 /* DetailPresenter.swift */; };
 		04D1E17D2AED806400A62CE1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D1E17B2AED806400A62CE1 /* DetailViewController.swift */; };
@@ -64,6 +65,7 @@
 		043B39942AEC41CB00C80047 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		043B39962AEC438B00C80047 /* AsselserModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsselserModuleBuilder.swift; sourceTree = "<group>"; };
 		04642EA22AED1870001244FB /* MainPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTest.swift; sourceTree = "<group>"; };
+		048013442AF1953D00064093 /* RouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTest.swift; sourceTree = "<group>"; };
 		04D1E1722AED612A00A62CE1 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		04D1E1762AED7DA900A62CE1 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		04D1E17B2AED806400A62CE1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				04642EA42AED1875001244FB /* TestMainModule */,
+				048013442AF1953D00064093 /* RouterTest.swift */,
 				043B39722AEC387400C80047 /* MVPTests.swift */,
 			);
 			path = MVPTests;
@@ -380,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				043B39732AEC387400C80047 /* MVPTests.swift in Sources */,
+				048013452AF1953D00064093 /* RouterTest.swift in Sources */,
 				04642EA32AED1870001244FB /* MainPresenterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
