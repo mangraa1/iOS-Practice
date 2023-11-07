@@ -71,11 +71,19 @@ extension ArticlesViewController: UITableViewDataSource, UITableViewDelegate {
             else { return UITableViewCell() }
 
         cell.setup(data: dataToDisplay[indexPath.row])
+        cell.delegate = self
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+    }
+}
+
+//MARK: - ArticleCellDelegate implementation
+extension ArticlesViewController: ArticleCellDelegate {
+    func didArticleTap(articleId: Int) {
+        print("article tap: ", articleId)
     }
 }
 
