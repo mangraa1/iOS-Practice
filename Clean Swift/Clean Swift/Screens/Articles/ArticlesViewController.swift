@@ -18,6 +18,7 @@ class ArticlesViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
 
     //MARK: External vars
+    private(set) var router: ArticlesRoutingLogic?
 
     //MARK: - Internal vars
     private var interactor: ArticlesBusinessLogic?
@@ -38,9 +39,12 @@ class ArticlesViewController: UIViewController {
         let viewController = self
         let presenter = ArticlesPresenter()
         let interactor = ArticlesInteractor()
+        let router = ArticlesRouter()
+        viewController.interactor = interactor
+        viewController.router = router
         interactor.presenter = presenter
         presenter.viewController = viewController
-        viewController.interactor = interactor
+        router.viewController = viewController
     }
 
     //MARK: - Life Cycle
@@ -83,7 +87,7 @@ extension ArticlesViewController: UITableViewDataSource, UITableViewDelegate {
 //MARK: - ArticleCellDelegate implementation
 extension ArticlesViewController: ArticleCellDelegate {
     func didArticleTap(articleId: Int) {
-        print("article tap: ", articleId)
+        router?.navigateToDetails(articleId: articleId)
     }
 }
 
