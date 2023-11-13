@@ -8,7 +8,11 @@
 import UIKit
 
 
-class NetworkService {
+protocol Networking {
+    func request(urlString: String, completion: @escaping (Data?, Error?) -> Void)
+}
+
+class NetworkService: Networking {
 
     //MARK: - External logic
     func request(urlString: String, completion: @escaping (Data?, Error?) -> Void) {

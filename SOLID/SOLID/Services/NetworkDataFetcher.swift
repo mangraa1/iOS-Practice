@@ -7,25 +7,42 @@
 
 import Foundation
 
+protocol DataFetcherProtocol {
+    func fetchGenericJSONData<T: Decodable>(urlString: String, response: @escaping (T?) -> Void)
+}
 
-class NetworkDataFetcher {
+class NetworkDataFetcher: DataFetcherProtocol {
 
-    let networkService: NetworkService!
+    //MARK: - Internal variables
+    private let networking: Networking
 
-    init(networkService: NetworkService = NetworkService()) {
-        self.networkService = networkService
+    //MARK: - Initialization
+    init(networking: Networking = NetworkService()) {
+        self.networking = networking
     }
 
-    func fetchCountry(with urlString: String, completion: @escaping ([Country]?) -> Void) {
-        networkService.request(urlString: urlString) { data, error in
-            do {
-                let decoder = JSONDecoder()
-                guard let data = data else { return }
-                let response = try decoder.decode([Country].self, from: data)
-                completion(response)
-            } catch let error {
-                print("Error: ", error.localizedDescription)
+    //MARK: - External logic
+    func fetchGenericJSONData<T: Decodable>(urlString: String, response: @escaping (T?) -> Void) {
+        networking.request(urlString: urlString) { data, error in
+            if let error = error {
+                print("Error received requesting data: \(error.localizedDescription)")
+                response(nil)
             }
+
+            let decoded = self.decodedJSON(type: T.self, from: data)
+            response(decoded)
+        }
+    }
+
+    //MARK: - Internal logic
+    private func decodedJSON<T: Decodable>(type: T.Type, from data: Data?) -> T? {
+        do {
+            guard let data = data else { return nil }
+            let objects = try JSONDecoder().decode(type.self, from: data)
+            return objects
+        } catch let error {
+            print("Failed to decode JSON: ", error)
+            return nil
         }
     }
 }

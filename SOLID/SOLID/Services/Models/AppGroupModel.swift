@@ -14,7 +14,7 @@ struct AppGroup: Decodable {
 
 struct Feed: Decodable {
     let title: String
-    let result: [FeedResult]
+    let results: [FeedResult]
 }
 
 struct FeedResult: Decodable {
