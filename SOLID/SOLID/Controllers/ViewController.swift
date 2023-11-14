@@ -21,17 +21,22 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dataFetcherService.fetchCountry { countries in
+        dataFetcherService.fetchNetworkCountry { countries in
             guard let countries = countries, let firstCountry = countries.first else { return }
             print(firstCountry.Name)
         }
 
+        dataFetcherService.fetchLocalCountry { localCountries in
+            guard let localCountries = localCountries, let lastCountry = localCountries.last else { return }
+            print(lastCountry.Name)
+        }
+
         dataFetcherService.fetchFreeApps { freeApps in
-            print(freeApps?.feed.results.first?.name)
+            print(freeApps?.feed.results.first?.name ?? "nil")
         }
 
         dataFetcherService.fetchMusic { music in
-            print(music?.feed.results.first?.name)
+            print(music?.feed.results.first?.name ?? "nil")
         }
     }
 

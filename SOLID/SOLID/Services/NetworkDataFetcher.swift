@@ -21,7 +21,6 @@ class NetworkDataFetcher: DataFetcherProtocol {
         self.networking = networking
     }
 
-    //MARK: - External logic
     func fetchGenericJSONData<T: Decodable>(urlString: String, response: @escaping (T?) -> Void) {
         networking.request(urlString: urlString) { data, error in
             if let error = error {
@@ -34,8 +33,7 @@ class NetworkDataFetcher: DataFetcherProtocol {
         }
     }
 
-    //MARK: - Internal logic
-    private func decodedJSON<T: Decodable>(type: T.Type, from data: Data?) -> T? {
+    func decodedJSON<T: Decodable>(type: T.Type, from data: Data?) -> T? {
         do {
             guard let data = data else { return nil }
             let objects = try JSONDecoder().decode(type.self, from: data)
