@@ -20,8 +20,8 @@
 		048009952B027FC9005CDA53 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048009942B027FC9005CDA53 /* DataFetcherService.swift */; };
 		04B6CD992B012A6A00A2D92D /* ViewController+alertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6CD982B012A6A00A2D92D /* ViewController+alertController.swift */; };
 		04B6CD9C2B0136BA00A2D92D /* AppGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6CD9B2B0136BA00A2D92D /* AppGroupModel.swift */; };
-		04F6D83A2B03D13600B7ECBA /* usersAPI.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04F6D8392B03D13600B7ECBA /* usersAPI.txt */; };
 		04F6D83C2B03D16C00B7ECBA /* LocalDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6D83B2B03D16C00B7ECBA /* LocalDataFetcher.swift */; };
+		04F6D8402B03EAAB00B7ECBA /* usersAPI.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04F6D83F2B03EAAB00B7ECBA /* usersAPI.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,8 +40,8 @@
 		048009942B027FC9005CDA53 /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
 		04B6CD982B012A6A00A2D92D /* ViewController+alertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+alertController.swift"; sourceTree = "<group>"; };
 		04B6CD9B2B0136BA00A2D92D /* AppGroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroupModel.swift; sourceTree = "<group>"; };
-		04F6D8392B03D13600B7ECBA /* usersAPI.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = usersAPI.txt; sourceTree = "<group>"; };
 		04F6D83B2B03D16C00B7ECBA /* LocalDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataFetcher.swift; sourceTree = "<group>"; };
+		04F6D83F2B03EAAB00B7ECBA /* usersAPI.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = usersAPI.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 				04F6D83B2B03D16C00B7ECBA /* LocalDataFetcher.swift */,
 				048009942B027FC9005CDA53 /* DataFetcherService.swift */,
 				040183FE2B01152D0028C57D /* DataStore.swift */,
-				04F6D8392B03D13600B7ECBA /* usersAPI.txt */,
+				04F6D83F2B03EAAB00B7ECBA /* usersAPI.txt */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -186,7 +186,7 @@
 			files = (
 				0463386E2AFEA1C7001D07BD /* LaunchScreen.storyboard in Resources */,
 				0463386B2AFEA1C7001D07BD /* Assets.xcassets in Resources */,
-				04F6D83A2B03D13600B7ECBA /* usersAPI.txt in Resources */,
+				04F6D8402B03EAAB00B7ECBA /* usersAPI.txt in Resources */,
 				046338692AFEA1C5001D07BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
