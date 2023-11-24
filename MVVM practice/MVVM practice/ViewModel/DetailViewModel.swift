@@ -16,6 +16,9 @@ class DetailViewModel: DetailViewModelType {
         return "\(profile.name) \(profile.secondName) is \(profile.age) y.o"
     }
 
+    // Set the observed object
+    var age: Box<String?> = Box(nil)
+
     init(profile: Profile) {
         self.profile = profile
     }

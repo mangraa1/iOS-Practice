@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		043560682B0F84B7008A1E65 /* TableViewCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043560672B0F84B7008A1E65 /* TableViewCellViewModelType.swift */; };
 		0435606A2B0F84F8008A1E65 /* TableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043560692B0F84F8008A1E65 /* TableViewCellViewModel.swift */; };
+		04418CA72B10EEFE00115092 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04418CA62B10EEFE00115092 /* Box.swift */; };
 		04643CB22B0EB0FC00795669 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04643CB12B0EB0FC00795669 /* ViewModel.swift */; };
 		04643CB52B0EB18200795669 /* TableViewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04643CB42B0EB18200795669 /* TableViewViewModelType.swift */; };
 		0466182E2B0E7C6300FBD8BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0466182D2B0E7C6300FBD8BA /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		043560672B0F84B7008A1E65 /* TableViewCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellViewModelType.swift; sourceTree = "<group>"; };
 		043560692B0F84F8008A1E65 /* TableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellViewModel.swift; sourceTree = "<group>"; };
+		04418CA62B10EEFE00115092 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		04643CB12B0EB0FC00795669 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		04643CB42B0EB18200795669 /* TableViewViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewViewModelType.swift; sourceTree = "<group>"; };
 		0466182A2B0E7C6300FBD8BA /* MVVM practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +100,7 @@
 			children = (
 				0466182D2B0E7C6300FBD8BA /* AppDelegate.swift */,
 				0466182F2B0E7C6300FBD8BA /* SceneDelegate.swift */,
+				04418CA62B10EEFE00115092 /* Box.swift */,
 				046618472B0E81AC00FBD8BA /* Model */,
 				046618482B0E81CA00FBD8BA /* View */,
 				04643CB62B0EB29D00795669 /* ViewModel */,
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				043560682B0F84B7008A1E65 /* TableViewCellViewModelType.swift in Sources */,
+				04418CA72B10EEFE00115092 /* Box.swift in Sources */,
 				046618462B0E7DEC00FBD8BA /* ProfileModel.swift in Sources */,
 				0466182E2B0E7C6300FBD8BA /* AppDelegate.swift in Sources */,
 				046618442B0E7CE600FBD8BA /* TableViewCell.swift in Sources */,

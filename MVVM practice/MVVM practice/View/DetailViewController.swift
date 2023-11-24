@@ -22,4 +22,24 @@ class DetailViewController: UIViewController {
         guard let viewModel = detailViewModel else { return }
         self.textLabel.text = viewModel.description
     }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        detailViewModel?.age.bind(listener: { [unowned self] in
+            guard let string = $0 else { return }
+            self.textLabel.text = string
+        })
+
+        delay(delay: 5) {
+            self.detailViewModel?.age.value = "Some new value"
+        }
+    }
+
+    //MARK: - Internal logic
+    private func delay(delay: Double, completion: @escaping () -> Void) {
+        DispatchQueue.main.asyncAfter(wallDeadline: .now() + delay) {
+            completion()
+        }
+    }
 }
