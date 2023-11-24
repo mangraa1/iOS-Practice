@@ -26,7 +26,7 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Identifire.tableViewCell.rawValue, for: indexPath) as? TableViewCell
 
         guard let tableViewCell = cell, let viewModel = viewModel else { return UITableViewCell() }
 
@@ -40,5 +40,22 @@ class TableViewController: UITableViewController {
     //MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        guard let viewModel = viewModel else { return }
+        viewModel.selectedRow(forIndexPath: indexPath)
+
+        performSegue(withIdentifier: Identifire.detailSegue.rawValue, sender: nil)
+    }
+
+    //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier, let viewModel = viewModel else { return }
+
+        if identifier == Identifire.detailSegue.rawValue {
+            if let destinationVC = segue.destination as? DetailViewController {
+                // Setting data for detailViewModel
+                destinationVC.detailViewModel = viewModel.viewModelFromSelectedRow()
+            }
+        }
     }
 }

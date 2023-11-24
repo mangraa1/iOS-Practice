@@ -19,6 +19,10 @@
 		046618422B0E7C8E00FBD8BA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046618412B0E7C8E00FBD8BA /* TableViewController.swift */; };
 		046618442B0E7CE600FBD8BA /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046618432B0E7CE600FBD8BA /* TableViewCell.swift */; };
 		046618462B0E7DEC00FBD8BA /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046618452B0E7DEC00FBD8BA /* ProfileModel.swift */; };
+		04BBBBB22B0FC87D007AFD26 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBBBB12B0FC87D007AFD26 /* DetailViewController.swift */; };
+		04BBBBB42B0FCA5C007AFD26 /* DetailViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBBBB32B0FCA5C007AFD26 /* DetailViewModelType.swift */; };
+		04BBBBB62B0FCA98007AFD26 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBBBB52B0FCA98007AFD26 /* DetailViewModel.swift */; };
+		04F4D1B72B10AA870058BD23 /* IdentifireEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4D1B62B10AA870058BD23 /* IdentifireEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		046618412B0E7C8E00FBD8BA /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		046618432B0E7CE600FBD8BA /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		046618452B0E7DEC00FBD8BA /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		04BBBBB12B0FC87D007AFD26 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		04BBBBB32B0FCA5C007AFD26 /* DetailViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelType.swift; sourceTree = "<group>"; };
+		04BBBBB52B0FCA98007AFD26 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		04F4D1B62B10AA870058BD23 /* IdentifireEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifireEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,7 @@
 			children = (
 				04643CB42B0EB18200795669 /* TableViewViewModelType.swift */,
 				043560672B0F84B7008A1E65 /* TableViewCellViewModelType.swift */,
+				04BBBBB32B0FCA5C007AFD26 /* DetailViewModelType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -63,6 +72,7 @@
 			children = (
 				04643CB12B0EB0FC00795669 /* ViewModel.swift */,
 				043560692B0F84F8008A1E65 /* TableViewCellViewModel.swift */,
+				04BBBBB52B0FCA98007AFD26 /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -92,6 +102,7 @@
 				046618482B0E81CA00FBD8BA /* View */,
 				04643CB62B0EB29D00795669 /* ViewModel */,
 				04643CB32B0EB15700795669 /* Protocols */,
+				04F4D1B82B10AA8E0058BD23 /* Enums */,
 				046618332B0E7C6300FBD8BA /* Main.storyboard */,
 				046618362B0E7C6400FBD8BA /* Assets.xcassets */,
 				046618382B0E7C6400FBD8BA /* LaunchScreen.storyboard */,
@@ -113,8 +124,17 @@
 			children = (
 				046618412B0E7C8E00FBD8BA /* TableViewController.swift */,
 				046618432B0E7CE600FBD8BA /* TableViewCell.swift */,
+				04BBBBB12B0FC87D007AFD26 /* DetailViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		04F4D1B82B10AA8E0058BD23 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				04F4D1B62B10AA870058BD23 /* IdentifireEnum.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,7 +214,11 @@
 				046618442B0E7CE600FBD8BA /* TableViewCell.swift in Sources */,
 				046618422B0E7C8E00FBD8BA /* TableViewController.swift in Sources */,
 				04643CB52B0EB18200795669 /* TableViewViewModelType.swift in Sources */,
+				04BBBBB42B0FCA5C007AFD26 /* DetailViewModelType.swift in Sources */,
+				04F4D1B72B10AA870058BD23 /* IdentifireEnum.swift in Sources */,
+				04BBBBB62B0FCA98007AFD26 /* DetailViewModel.swift in Sources */,
 				0435606A2B0F84F8008A1E65 /* TableViewCellViewModel.swift in Sources */,
+				04BBBBB22B0FC87D007AFD26 /* DetailViewController.swift in Sources */,
 				04643CB22B0EB0FC00795669 /* ViewModel.swift in Sources */,
 				046618302B0E7C6300FBD8BA /* SceneDelegate.swift in Sources */,
 			);
