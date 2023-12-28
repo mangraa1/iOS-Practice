@@ -7,16 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0483BC552B3DB69A00F11211 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483BC542B3DB69A00F11211 /* ApiManager.swift */; };
+		0483BC572B3DC28900F11211 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483BC562B3DC28900F11211 /* Users.swift */; };
+		0483BC592B3DC4B800F11211 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483BC582B3DC4B800F11211 /* PostsModel.swift */; };
+		0483BC5B2B3DC50400F11211 /* AlbumsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483BC5A2B3DC50400F11211 /* AlbumsModel.swift */; };
 		04D367132B3CA4AD002D635F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D367122B3CA4AD002D635F /* AppDelegate.swift */; };
 		04D367152B3CA4AD002D635F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D367142B3CA4AD002D635F /* SceneDelegate.swift */; };
 		04D367172B3CA4AD002D635F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D367162B3CA4AD002D635F /* ViewController.swift */; };
 		04D3671A2B3CA4AD002D635F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D367182B3CA4AD002D635F /* Main.storyboard */; };
 		04D3671C2B3CA4AE002D635F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D3671B2B3CA4AE002D635F /* Assets.xcassets */; };
 		04D3671F2B3CA4AE002D635F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D3671D2B3CA4AE002D635F /* LaunchScreen.storyboard */; };
-		04D367272B3CAF3A002D635F /* JokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D367262B3CAF3A002D635F /* JokeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0483BC542B3DB69A00F11211 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		0483BC562B3DC28900F11211 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		0483BC582B3DC4B800F11211 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
+		0483BC5A2B3DC50400F11211 /* AlbumsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsModel.swift; sourceTree = "<group>"; };
 		04D3670F2B3CA4AD002D635F /* Basic request.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Basic request.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D367122B3CA4AD002D635F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D367142B3CA4AD002D635F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -25,7 +32,6 @@
 		04D3671B2B3CA4AE002D635F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04D3671E2B3CA4AE002D635F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04D367202B3CA4AE002D635F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04D367262B3CAF3A002D635F /* JokeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +45,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0483BC512B3DB46C00F11211 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0483BC532B3DB62B00F11211 /* Models */,
+				0483BC522B3DB47300F11211 /* Services */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		0483BC522B3DB47300F11211 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0483BC542B3DB69A00F11211 /* ApiManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0483BC532B3DB62B00F11211 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0483BC5A2B3DC50400F11211 /* AlbumsModel.swift */,
+				0483BC582B3DC4B800F11211 /* PostsModel.swift */,
+				0483BC562B3DC28900F11211 /* Users.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		04D367062B3CA4AD002D635F = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +91,7 @@
 		04D367112B3CA4AD002D635F /* Basic request */ = {
 			isa = PBXGroup;
 			children = (
-				04D3672B2B3CBD0E002D635F /* View */,
-				04D367292B3CBC65002D635F /* Model */,
+				0483BC512B3DB46C00F11211 /* API */,
 				04D367282B3CBC55002D635F /* Controller */,
 				04D3672A2B3CBC79002D635F /* Helpers */,
 				04D367182B3CA4AD002D635F /* Main.storyboard */,
@@ -77,14 +109,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		04D367292B3CBC65002D635F /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				04D367262B3CAF3A002D635F /* JokeModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		04D3672A2B3CBC79002D635F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,13 +117,6 @@
 				04D3671B2B3CA4AE002D635F /* Assets.xcassets */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		04D3672B2B3CBD0E002D635F /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,8 +190,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D367272B3CAF3A002D635F /* JokeModel.swift in Sources */,
+				0483BC552B3DB69A00F11211 /* ApiManager.swift in Sources */,
+				0483BC592B3DC4B800F11211 /* PostsModel.swift in Sources */,
 				04D367172B3CA4AD002D635F /* ViewController.swift in Sources */,
+				0483BC572B3DC28900F11211 /* Users.swift in Sources */,
+				0483BC5B2B3DC50400F11211 /* AlbumsModel.swift in Sources */,
 				04D367132B3CA4AD002D635F /* AppDelegate.swift in Sources */,
 				04D367152B3CA4AD002D635F /* SceneDelegate.swift in Sources */,
 			);
