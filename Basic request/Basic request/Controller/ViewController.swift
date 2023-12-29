@@ -14,11 +14,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         ApiManager.shared.getUsers { users in
-            print("Users count: ", users.count)
+            print("Users count: ", users?.count as Any)
         }
 
         ApiManager.shared.getPosts { posts in
-            print("Posts count: ", posts.count)
+            print("Posts count: ", posts?.count as Any)
+        }
+
+        ApiManager.shared.getAlbums { albums in
+            print("Albums count: ", albums?.count as Any)
         }
     }
 }

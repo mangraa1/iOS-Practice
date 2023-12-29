@@ -54,37 +54,32 @@ enum ApiType {
 
 class ApiManager {
 
+    //MARK: - Variables
     static let shared = ApiManager()
 
-    private init() {}
+    private let networkDataFetcher: DataFetcherProtocol
 
-    func getUsers(completion: @escaping (Users) -> Void) {
-        let request = ApiType.getUsers.request
-
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard error == nil else { return }
-
-            if let data = data, let users = try? JSONDecoder().decode(Users.self, from: data) {
-                completion(users)
-            } else {
-                completion([])
-            }
-        }
-        task.resume()
+    //MARK: - Initialization
+    private init() {
+        self.networkDataFetcher = NetworkDataFetcher()
     }
 
-    func getPosts(completion: @escaping (Posts) -> Void) {
+    //MARK: - External logic
+    public func getUsers(completion: @escaping (Users?) -> Void) {
         let request = ApiType.getUsers.request
 
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard error == nil else { return }
+        networkDataFetcher.fetchGenericJSONData(from: request, completion: completion)
+    }
 
-            if let data = data, let posts = try? JSONDecoder().decode(Posts.self, from: data) {
-                completion(posts)
-            } else {
-                completion([])
-            }
-        }
-        task.resume()
+    public func getPosts(completion: @escaping (Posts?) -> Void) {
+        let request = ApiType.getUsers.request
+        
+        networkDataFetcher.fetchGenericJSONData(from: request, completion: completion)
+    }
+
+    public func getAlbums(completion: @escaping (Albums?) -> Void) {
+        let request = ApiType.getAlbums.request
+
+        networkDataFetcher.fetchGenericJSONData(from: request, completion: completion)
     }
 }
