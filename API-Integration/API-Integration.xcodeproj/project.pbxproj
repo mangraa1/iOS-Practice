@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04B22D482B4448DE00A08AD5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04B22D472B4448DE00A08AD5 /* Alamofire */; };
+		04B22D4A2B44493B00A08AD5 /* NetworService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B22D492B44493B00A08AD5 /* NetworService.swift */; };
+		04B22D4C2B444C3B00A08AD5 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B22D4B2B444C3B00A08AD5 /* CharacterModel.swift */; };
+		04B22D4E2B4461E500A08AD5 /* CharactersFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B22D4D2B4461E500A08AD5 /* CharactersFetcher.swift */; };
 		04B921F82B42FB4D00653988 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B921F72B42FB4D00653988 /* MainViewController.swift */; };
 		04B921FB2B42FBAA00653988 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 04B921FA2B42FBAA00653988 /* SnapKit */; };
 		04E89DB72B3787F0001CA221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E89DB62B3787F0001CA221 /* AppDelegate.swift */; };
@@ -17,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04B22D492B44493B00A08AD5 /* NetworService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworService.swift; sourceTree = "<group>"; };
+		04B22D4B2B444C3B00A08AD5 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		04B22D4D2B4461E500A08AD5 /* CharactersFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersFetcher.swift; sourceTree = "<group>"; };
 		04B921F72B42FB4D00653988 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		04E89DB32B3787F0001CA221 /* API-Integration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "API-Integration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E89DB62B3787F0001CA221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +40,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04B921FB2B42FBAA00653988 /* SnapKit in Frameworks */,
+				04B22D482B4448DE00A08AD5 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +68,7 @@
 		04840FC22B39E60300624109 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				04B22D4B2B444C3B00A08AD5 /* CharacterModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -76,6 +85,8 @@
 		04B921F62B42FA8D00653988 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				04B22D492B44493B00A08AD5 /* NetworService.swift */,
+				04B22D4D2B4461E500A08AD5 /* CharactersFetcher.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -127,6 +138,7 @@
 			name = "API-Integration";
 			packageProductDependencies = (
 				04B921FA2B42FBAA00653988 /* SnapKit */,
+				04B22D472B4448DE00A08AD5 /* Alamofire */,
 			);
 			productName = "API-Integration";
 			productReference = 04E89DB32B3787F0001CA221 /* API-Integration.app */;
@@ -158,6 +170,7 @@
 			mainGroup = 04E89DAA2B3787F0001CA221;
 			packageReferences = (
 				04B921F92B42FBAA00653988 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				04B22D462B4448DE00A08AD5 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 04E89DB42B3787F0001CA221 /* Products */;
 			projectDirPath = "";
@@ -186,6 +199,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B22D4A2B44493B00A08AD5 /* NetworService.swift in Sources */,
+				04B22D4E2B4461E500A08AD5 /* CharactersFetcher.swift in Sources */,
+				04B22D4C2B444C3B00A08AD5 /* CharacterModel.swift in Sources */,
 				04B921F82B42FB4D00653988 /* MainViewController.swift in Sources */,
 				04E89DB72B3787F0001CA221 /* AppDelegate.swift in Sources */,
 				04E89DB92B3787F0001CA221 /* SceneDelegate.swift in Sources */,
@@ -411,6 +427,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		04B22D462B4448DE00A08AD5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
 		04B921F92B42FBAA00653988 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -422,6 +446,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		04B22D472B4448DE00A08AD5 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04B22D462B4448DE00A08AD5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		04B921FA2B42FBAA00653988 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 04B921F92B42FBAA00653988 /* XCRemoteSwiftPackageReference "SnapKit" */;

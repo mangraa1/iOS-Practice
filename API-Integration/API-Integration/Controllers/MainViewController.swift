@@ -13,11 +13,18 @@ class MainViewController: UIViewController {
 
     //MARK: - Internal properties
     private var tableView = UITableView()
+
+    private let charactersFetcher = CharactersFetcher()
     private let cellIdentifier = "cell"
 
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        charactersFetcher.fetchCharacters { characters in
+            print(characters.first?.name)
+            print(characters.last?.name)
+        }
 
         makeTableView()
     }
