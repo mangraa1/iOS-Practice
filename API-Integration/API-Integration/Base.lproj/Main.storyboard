@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main-->
+        <!--Characters-->
         <scene sceneID="TJg-Zu-fEm">
             <objects>
                 <viewController id="kW2-Tl-aje" customClass="MainViewController" customModule="API_Integration" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <viewLayoutGuide key="safeArea" id="cpq-WJ-g0H"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Main" id="qJD-nm-xV6"/>
+                    <navigationItem key="navigationItem" title="Characters" id="qJD-nm-xV6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x9U-wn-C8F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

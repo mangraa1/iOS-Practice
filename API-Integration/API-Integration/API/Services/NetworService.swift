@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 
+
 class NetworkService {
 
     //MARK: - Internal properties
@@ -18,6 +19,7 @@ class NetworkService {
 
     //MARK: - External methods
 
+    // Receiving an array of the same type of data from the network
     public func sendMultipleRequests<T: Codable>(baseURLString: String, paths: [Int], responseType: T.Type, completion: @escaping (Result<[T], Error>) -> Void) {
 
         // Create a group for tracking requests
@@ -53,7 +55,24 @@ class NetworkService {
         }
     }
 
+    // Getting an image from the network
+    public func sendImageRequest(from imageUrl: URL, completion: @escaping (Data?, Error?) -> Void){
+
+        // Uploading an image from the specified URL
+        AF.request(imageUrl).responseData { response in
+            debugPrint(response)
+            switch response.result {
+            case .success(let data):
+                completion(data, nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+
     //MARK: - Internal methods
+
+    // Receiving data from the network
     private func sendRequest<T: Codable>(urlString: String, responseType: T.Type, group: DispatchGroup, completion: @escaping (Result<T, Error>) -> Void) {
 
         guard let url = URL(string: urlString) else {

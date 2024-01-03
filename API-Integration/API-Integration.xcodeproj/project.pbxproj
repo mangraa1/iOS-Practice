@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0420C05B2B457B2D00368491 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0420C05A2B457B2D00368491 /* ImageFetcher.swift */; };
 		04B22D482B4448DE00A08AD5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04B22D472B4448DE00A08AD5 /* Alamofire */; };
 		04B22D4A2B44493B00A08AD5 /* NetworService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B22D492B44493B00A08AD5 /* NetworService.swift */; };
 		04B22D4C2B444C3B00A08AD5 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B22D4B2B444C3B00A08AD5 /* CharacterModel.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0420C05A2B457B2D00368491 /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
 		04B22D492B44493B00A08AD5 /* NetworService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworService.swift; sourceTree = "<group>"; };
 		04B22D4B2B444C3B00A08AD5 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		04B22D4D2B4461E500A08AD5 /* CharactersFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersFetcher.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			children = (
 				04B22D492B44493B00A08AD5 /* NetworService.swift */,
 				04B22D4D2B4461E500A08AD5 /* CharactersFetcher.swift */,
+				0420C05A2B457B2D00368491 /* ImageFetcher.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				04B22D4E2B4461E500A08AD5 /* CharactersFetcher.swift in Sources */,
 				04B22D4C2B444C3B00A08AD5 /* CharacterModel.swift in Sources */,
 				04B921F82B42FB4D00653988 /* MainViewController.swift in Sources */,
+				0420C05B2B457B2D00368491 /* ImageFetcher.swift in Sources */,
 				04E89DB72B3787F0001CA221 /* AppDelegate.swift in Sources */,
 				04E89DB92B3787F0001CA221 /* SceneDelegate.swift in Sources */,
 			);
