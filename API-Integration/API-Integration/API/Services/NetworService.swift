@@ -35,7 +35,7 @@ class NetworkService {
             // Login to the group before each request
             group.enter()
 
-            sendRequest(urlString: urlString, responseType: responseType, group: group) { result in
+            sendResponseDecodableRequest(urlString: urlString, responseType: responseType, group: group) { result in
                 switch result {
                 case .success(let dataModel):
                     results.append(dataModel)
@@ -73,7 +73,7 @@ class NetworkService {
     //MARK: - Internal methods
 
     // Receiving data from the network
-    private func sendRequest<T: Codable>(urlString: String, responseType: T.Type, group: DispatchGroup, completion: @escaping (Result<T, Error>) -> Void) {
+    private func sendResponseDecodableRequest<T: Codable>(urlString: String, responseType: T.Type, group: DispatchGroup, completion: @escaping (Result<T, Error>) -> Void) {
 
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))

@@ -17,6 +17,8 @@ class MainViewController: UIViewController {
     private var characters: Characters = []
     private let charactersFetcher = CharactersFetcher()
     private let imageFetcher = ImageFetcher()
+
+    private var imageCache = NSCache<NSString, UIImage>()
     private let cellIdentifier = "cell"
 
     //MARK: - Life Cycle
@@ -46,6 +48,19 @@ class MainViewController: UIViewController {
 
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
     }
+
+    // Function to add insets to an image
+    private func addInsets(to image: UIImage, insets: CGFloat) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(
+            CGSize(width: image.size.width + insets * 2, height: image.size.height + insets * 2), false, 0)
+
+        image.draw(in: CGRect(x: insets, y: insets, width: image.size.width, height: image.size.height))
+
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+
+        UIGraphicsEndImageContext()
+        return newImage
+    }
 }
 
 //MARK: - UITableViewDataSource
@@ -60,11 +75,31 @@ extension MainViewController: UITableViewDataSource {
 
         let character = characters[indexPath.row]
 
-        var content = cell.defaultContentConfiguration()
-        content.text = character.name
-        content.textProperties.color = .black
+        cell.textLabel?.text = character.name
+        cell.detailTextLabel?.text = character.status
 
-        cell.contentConfiguration = content
+        // Download image from URL
+        if let cachedImage = imageCache.object(forKey: character.image as NSString) {
+            cell.imageView?.image = cachedImage
+        } else {
+            // If the image is not in the cache, we load it from the URL
+            if let url = URL(string: character.image) {
+                DispatchQueue.global().async {
+                    if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                        // Store the downloaded image in the cache
+                        self.imageCache.setObject(image, forKey: character.image as NSString)
+
+                        DispatchQueue.main.async {
+                            let insets: CGFloat = 50
+                            let newImage = self.addInsets(to: image, insets: insets)
+
+                            cell.imageView?.image = newImage
+                            cell.setNeedsLayout()
+                        }
+                    }
+                }
+            }
+        }
 
         return cell
     }
