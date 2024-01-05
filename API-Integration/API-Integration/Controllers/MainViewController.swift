@@ -13,13 +13,15 @@ class MainViewController: UIViewController {
 
     //MARK: - Internal properties
     private var tableView: UITableView = .init(frame: .zero, style: .insetGrouped)
+    private var imageCache = NSCache<NSString, UIImage>()
 
     private var characters: Characters = []
+
     private let charactersFetcher = CharactersFetcher()
     private let imageFetcher = ImageFetcher()
 
-    private var imageCache = NSCache<NSString, UIImage>()
     private let cellIdentifier = "cell"
+    private let detailSegueIdentifier = "showDetail"
 
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -60,6 +62,20 @@ class MainViewController: UIViewController {
 
         UIGraphicsEndImageContext()
         return newImage
+    }
+
+    //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == detailSegueIdentifier {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+
+            let character = characters[indexPath.row]
+
+            let detailVC = segue.destination as? DetailViewController
+            detailVC?.currentCharacter = character
+
+            tableView.deselectRow(at: indexPath, animated: false)
+        }
     }
 }
 
@@ -113,6 +129,6 @@ extension MainViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
+        performSegue(withIdentifier: detailSegueIdentifier, sender: self)
     }
 }
