@@ -11,7 +11,7 @@
         <!--Characters-->
         <scene sceneID="TJg-Zu-fEm">
             <objects>
-                <viewController id="kW2-Tl-aje" customClass="MainViewController" customModule="API_Integration" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kW2-Tl-aje" customClass="CharactersViewController" customModule="API_Integration" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l1Y-d6-leq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
