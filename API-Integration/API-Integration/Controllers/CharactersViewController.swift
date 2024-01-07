@@ -6,13 +6,12 @@
 //
 
 import UIKit
-import SnapKit
 
 
 class CharactersViewController: UIViewController {
 
     //MARK: - Internal properties
-    private var tableView: UITableView = .init(frame: .zero, style: .insetGrouped)
+    private var charactersView: CharactersView!
     private var characters: Characters = []
     private let charactersFetcher = CharactersFetcher()
     private let imageFetcher = ImageFetcher()
@@ -22,41 +21,35 @@ class CharactersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        createView()
+
         charactersFetcher.fetchCharacters {[weak self] characters in
             self?.characters = characters
-            self?.tableView.reloadData()
+            self?.charactersView.tableView.reloadData()
         }
-
-        makeTableView()
     }
 
     //MARK: - Internal methods
-    private func makeTableView() {
-        view.addSubview(tableView)
-
-        tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-
-        tableView.delegate = self
-        tableView.dataSource = self
-
-        tableView.separatorInset = .init(top: 0, left: 16, bottom: 0, right: 16)
-
-        tableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: CharacterTableViewCell.identifier)
+    private func createView() {
+        charactersView = CharactersView()
+        charactersView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        charactersView.center = view.center
+        charactersView.tableView.dataSource = self
+        charactersView.tableView.delegate = self
+        view.addSubview(charactersView)
     }
 
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == detailSegueIdentifier {
-            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            guard let indexPath = charactersView.tableView.indexPathForSelectedRow else { return }
 
             let character = characters[indexPath.row]
 
             let detailVC = segue.destination as? DetailViewController
             detailVC?.currentCharacter = character
 
-            tableView.deselectRow(at: indexPath, animated: false)
+            charactersView.tableView.deselectRow(at: indexPath, animated: false)
         }
     }
 }
