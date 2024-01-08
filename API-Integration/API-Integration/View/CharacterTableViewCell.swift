@@ -35,25 +35,6 @@ class CharacterTableViewCell: UITableViewCell {
         }
     }
 
-    //MARK: - Internal methods
-    private func loadImage(for character: Character, imageCache: NSCache<NSString, UIImage>, completion: @escaping (UIImage?) -> Void) {
-        guard let url = URL(string: character.image) else {
-            completion(nil)
-            return
-        }
-
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
-                self.imageCache.setObject(image, forKey: character.image as NSString)
-                DispatchQueue.main.async {
-                    completion(image)
-                }
-            } else {
-                completion(nil)
-            }
-        }
-    }
-
     // Function to add insets to an image
     private func addInsets(to image: UIImage, insets: CGFloat) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(
