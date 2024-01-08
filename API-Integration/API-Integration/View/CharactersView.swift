@@ -19,7 +19,7 @@ class CharactersView: UIView {
         configure()
     }
 
-    //MARK: - Interna methods
+    //MARK: - Internal methods
     private func configure() {
         self.addSubview(tableView)
 

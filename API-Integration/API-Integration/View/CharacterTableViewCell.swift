@@ -12,6 +12,7 @@ class CharacterTableViewCell: UITableViewCell {
 
     //MARK: - Properties
     static let identifier = "CharacterTableViewCell"
+
     private var imageCache = NSCache<NSString, UIImage>()
 
     //MARK: - External methods
@@ -22,8 +23,9 @@ class CharacterTableViewCell: UITableViewCell {
         if let cachedImage = imageCache.object(forKey: character.image as NSString) {
             cell.imageView?.image = cachedImage
         } else {
-            loadImage(for: character) { [weak self] image in
+            ImageFetcher.shared.loadImage(for: character) { [weak self] image in
                 guard let self = self, let image = image else { return }
+                self.imageCache.setObject(image, forKey: character.image as NSString)
 
                 let insets: CGFloat = 50
                 let newImage = self.addInsets(to: image, insets: insets)
@@ -34,7 +36,7 @@ class CharacterTableViewCell: UITableViewCell {
     }
 
     //MARK: - Internal methods
-    private func loadImage(for character: Character, completion: @escaping (UIImage?) -> Void) {
+    private func loadImage(for character: Character, imageCache: NSCache<NSString, UIImage>, completion: @escaping (UIImage?) -> Void) {
         guard let url = URL(string: character.image) else {
             completion(nil)
             return

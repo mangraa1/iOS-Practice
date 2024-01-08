@@ -15,7 +15,5 @@ class DetailViewController: UIViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print(self.currentCharacter.name)
     }
 }

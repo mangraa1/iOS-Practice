@@ -13,8 +13,6 @@ class CharactersViewController: UIViewController {
     //MARK: - Internal properties
     private var charactersView: CharactersView!
     private var characters: Characters = []
-    private let charactersFetcher = CharactersFetcher()
-    private let imageFetcher = ImageFetcher()
     private let detailSegueIdentifier = "showDetail"
 
     //MARK: - Life Cycle
@@ -23,7 +21,7 @@ class CharactersViewController: UIViewController {
 
         createView()
 
-        charactersFetcher.fetchCharacters {[weak self] characters in
+        CharactersFetcher.shared.fetchCharacters {[weak self] characters in
             self?.characters = characters
             self?.charactersView.tableView.reloadData()
         }

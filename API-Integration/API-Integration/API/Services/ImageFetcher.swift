@@ -11,23 +11,26 @@ import UIKit
 
 class ImageFetcher {
 
-    //MARK: - Internal methods
-    public func fetchImage(from urlString: String, completion: @escaping (UIImage?) -> Void) {
+    //MARK: - Properties
+    static let shared = ImageFetcher()
 
-        guard let url = URL(string: urlString) else {
-            print("Invalid URL")
+    //MARK: - Initialization
+    private init() {}
+
+    //MARK: - External methods
+    public func loadImage(for character: Character, completion: @escaping (UIImage?) -> Void) {
+        guard let url = URL(string: character.image) else {
             completion(nil)
             return
         }
 
-        NetworkService.shared.sendImageRequest(from: url) { data, error in
-            guard let data = data, error == nil, let image = UIImage(data: data) else {
-                print("Error: \(String(describing: error?.localizedDescription))")
-                return
-            }
-
-            DispatchQueue.main.async {
-                completion(image)
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    completion(image)
+                }
+            } else {
+                completion(nil)
             }
         }
     }

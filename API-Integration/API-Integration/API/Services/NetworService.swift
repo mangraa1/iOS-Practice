@@ -11,7 +11,7 @@ import Alamofire
 
 class NetworkService {
 
-    //MARK: - Internal properties
+    //MARK: - Properties
     static let shared = NetworkService()
 
     //MARK: - Initialization
@@ -54,22 +54,7 @@ class NetworkService {
             }
         }
     }
-
-    // Getting an image from the network
-    public func sendImageRequest(from imageUrl: URL, completion: @escaping (Data?, Error?) -> Void){
-
-        // Uploading an image from the specified URL
-        AF.request(imageUrl).responseData { response in
-            debugPrint(response)
-            switch response.result {
-            case .success(let data):
-                completion(data, nil)
-            case .failure(let error):
-                completion(nil, error)
-            }
-        }
-    }
-
+    
     //MARK: - Internal methods
 
     // Receiving data from the network

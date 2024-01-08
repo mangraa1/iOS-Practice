@@ -10,8 +10,13 @@ import Foundation
 
 class CharactersFetcher {
 
+    static let shared = CharactersFetcher()
+
     //MARK: - Internal properties
     private let baseURL = "https://rickandmortyapi.com/api/character/"
+
+    //MARK: - Initialization
+    private init() {}
 
     //MARK: - External methods
     public func fetchCharacters(completion: @escaping ([Character]) -> Void) {
