@@ -46,6 +46,7 @@ class CharactersViewController: UIViewController {
 
             let detailVC = segue.destination as? DetailViewController
             detailVC?.currentCharacter = character
+            detailVC?.navigationItem.title = character.name
 
             charactersView.tableView.deselectRow(at: indexPath, animated: false)
         }
